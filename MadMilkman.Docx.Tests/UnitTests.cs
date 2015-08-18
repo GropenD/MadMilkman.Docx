@@ -102,17 +102,17 @@ namespace MadMilkman.Docx.Tests
 
         private static void AppendBody(DocxFile docx)
         {
-            docx.Body.AppendText("<html><body><span style='color:blue;'>Body HTML content!</span></body></html>", DocxContentType.Html);
-            docx.Body.AppendText(@"{\rtf1\ansi\deff0{\colortbl;\red255\green0\blue0;}\cf1 Body RTF content!}", DocxContentType.Rtf);
+            docx.Body.AppendText("<html><body><span style='color:blue;'>Body HTML content!</span></body></html>", ContentType.Html);
+            docx.Body.AppendText(@"{\rtf1\ansi\deff0{\colortbl;\red255\green0\blue0;}\cf1 Body RTF content!}", ContentType.Rtf);
         }
 
         private static void AppendHeaderFooter(DocxFile docx)
         {
-            docx.Header.AppendText("<html><body><span style='color:blue;'>Header HTML content!</span></body></html>", DocxContentType.Html);
-            docx.Header.AppendText(@"{\rtf1\ansi\deff0{\colortbl;\red255\green0\blue0;}\cf1 Header RTF content!}", DocxContentType.Rtf);
+            docx.Header.AppendText("<html><body><span style='color:blue;'>Header HTML content!</span></body></html>", ContentType.Html);
+            docx.Header.AppendText(@"{\rtf1\ansi\deff0{\colortbl;\red255\green0\blue0;}\cf1 Header RTF content!}", ContentType.Rtf);
 
-            docx.Footer.AppendText("<html><body><span style='color:blue;'>Footer HTML content!</span></body></html>", DocxContentType.Html);
-            docx.Footer.AppendText(@"{\rtf1\ansi\deff0{\colortbl;\red255\green0\blue0;}\cf1 Footer RTF content!}", DocxContentType.Rtf);
+            docx.Footer.AppendText("<html><body><span style='color:blue;'>Footer HTML content!</span></body></html>", ContentType.Html);
+            docx.Footer.AppendText(@"{\rtf1\ansi\deff0{\colortbl;\red255\green0\blue0;}\cf1 Footer RTF content!}", ContentType.Rtf);
         }
     }
 }

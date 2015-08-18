@@ -1,28 +1,29 @@
 ﻿using System;
 using MadMilkman.Docx.Properties;
+using ChunkContentType = MadMilkman.Docx.ContentType;
 
 namespace MadMilkman.Docx
 {
     internal sealed class DocxChunk
     {
-        private DocxContentType docxContentType;
+        private ChunkContentType contentType;
 
         public string Content { get; private set; }
 
-        public DocxChunk(string content, DocxContentType docxContentType)
+        public DocxChunk(string content, ChunkContentType contentType)
         {
             this.Content = content;
-            this.docxContentType = docxContentType;
+            this.contentType = contentType;
         }
 
         public string ContentType
         {
             get
             {
-                if (this.docxContentType == DocxContentType.Html)
+                if (this.contentType == ChunkContentType.Html)
                     return Resources.HtmlContentType;
 
-                if (this.docxContentType == DocxContentType.Rtf)
+                if (this.contentType == ChunkContentType.Rtf)
                     return Resources.RtfContentType;
 
                 else
@@ -34,10 +35,10 @@ namespace MadMilkman.Docx
         {
             get
             {
-                if (this.docxContentType == DocxContentType.Html)
+                if (this.contentType == ChunkContentType.Html)
                     return ".html";
 
-                if (this.docxContentType == DocxContentType.Rtf)
+                if (this.contentType == ChunkContentType.Rtf)
                     return ".rtf";
 
                 else

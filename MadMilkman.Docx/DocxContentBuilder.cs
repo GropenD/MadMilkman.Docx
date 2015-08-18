@@ -19,11 +19,11 @@ namespace MadMilkman.Docx
         /// <param name="content">Text content to add to document.</param>
         /// <param name="contentType">Type of the text content.</param>
         /// <returns>A reference to this instance after the append operation has completed.</returns>
-        public DocxContentBuilder AppendText(string content, DocxContentType contentType)
+        public DocxContentBuilder AppendText(string content, ContentType contentType)
         {
             if (content == null)
                 throw new ArgumentNullException("content");
-
+            
             this.chunks.Add(new DocxChunk(content, contentType));
             return this;
         }
@@ -34,7 +34,7 @@ namespace MadMilkman.Docx
         /// <param name="filePath">Path from which to read a file.</param>
         /// <param name="contentType">Type of the file's content.</param>
         /// <returns>A reference to this instance after the append operation has completed.</returns>
-        public DocxContentBuilder AppendFile(string filePath, DocxContentType contentType)
+        public DocxContentBuilder AppendFile(string filePath, ContentType contentType)
         {
             if (filePath == null)
                 throw new ArgumentNullException("filePath");
@@ -49,7 +49,7 @@ namespace MadMilkman.Docx
         /// <param name="fileStream">Stream with which to read a file.</param>
         /// <param name="contentType">Type of the file's content.</param>
         /// <returns>A reference to this instance after the append operation has completed.</returns>
-        public DocxContentBuilder AppendFile(Stream fileStream, DocxContentType contentType)
+        public DocxContentBuilder AppendFile(Stream fileStream, ContentType contentType)
         {
             if (fileStream == null)
                 throw new ArgumentNullException("fileStream");

@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents the type of the document's content.
     /// </summary>
-    public enum DocxContentType
+    public enum ContentType
     {
         /// <summary>
         /// Defines HTML formatted content.

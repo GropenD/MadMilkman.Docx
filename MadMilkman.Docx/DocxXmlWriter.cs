@@ -40,6 +40,6 @@ namespace MadMilkman.Docx
             this.writer.WriteEndElement();
         }
 
-        public void Dispose() { this.writer.Dispose(); }
+        public void Dispose() { this.writer.Close(); }
     }
 }

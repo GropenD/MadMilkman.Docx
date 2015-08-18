@@ -11,9 +11,9 @@ namespace MadMilkman.Docx.Tests
         {
             var docx = new DocxFile();
 
-            docx.Body.AppendFile(@"..\..\TestFiles\Font.rtf", DocxContentType.Rtf);
-            docx.Body.AppendFile(@"..\..\TestFiles\Image.rtf", DocxContentType.Rtf);
-            docx.Body.AppendFile(@"..\..\TestFiles\Table.rtf", DocxContentType.Rtf);
+            docx.Body.AppendFile(@"..\..\TestFiles\Font.rtf", ContentType.Rtf)
+                     .AppendFile(@"..\..\TestFiles\Image.rtf", ContentType.Rtf)
+                     .AppendFile(@"..\..\TestFiles\Table.rtf", ContentType.Rtf);
 
             docx.Save("DocxRtfResultTest.docx");
             Process.Start("DocxRtfResultTest.docx");
@@ -24,9 +24,9 @@ namespace MadMilkman.Docx.Tests
         {
             var docx = new DocxFile();
 
-            docx.Body.AppendFile(@"..\..\TestFiles\Font.html", DocxContentType.Html);
-            docx.Body.AppendFile(@"..\..\TestFiles\Image.html", DocxContentType.Html);
-            docx.Body.AppendFile(@"..\..\TestFiles\Table.html", DocxContentType.Html);
+            docx.Body.AppendFile(@"..\..\TestFiles\Font.html", ContentType.Html)
+                     .AppendFile(@"..\..\TestFiles\Image.html", ContentType.Html)
+                     .AppendFile(@"..\..\TestFiles\Table.html", ContentType.Html);
 
             docx.Save("DocxHtmlResultTest.docx");
             Process.Start("DocxHtmlResultTest.docx");

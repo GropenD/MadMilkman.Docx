@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MadMilkman.Docx</RootNamespace>
     <AssemblyName>MadMilkman.Docx</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="DocxChunk.cs" />
     <Compile Include="DocxContentBuilder.cs" />
-    <Compile Include="DocxContentType.cs" />
+    <Compile Include="ContentType.cs" />
     <Compile Include="DocxFile.cs" />
     <Compile Include="DocxPackageWriter.cs" />
     <Compile Include="DocxXmlWriter.cs" />
