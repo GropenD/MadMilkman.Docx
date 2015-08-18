@@ -38,10 +38,7 @@ The component currently supports importing of only HTML and RTF content, however
 Feel free to contact me with any questions or issues regarding the MadMilkman.Docx component. Also if you require a support for any additional format(s) or you have some other suggestion for component's improvement, don't hesitate to ask!
 
 ## Installation:
-You can download the library from:
-* Release page
-* Nuget
-
+You can download the library from [here](https://github.com/MarioZ/MadMilkman.Docx/raw/master/MadMilkman.Docx.zip) or from [NuGet](http://www.nuget.org/packages/MadMilkman.Docx).
 
 ## Limitations
 The _alternative format import part_ technique does not convert the imported content from an alternative format into a WordprocessingML format but rather relies on the consuming application to merge the documents. However by DOCX specification consuming application is free to ignore the imported external content. In other words some Word processing applications (like MS Word) are able to render the external content(s) while others (like Open Office Writer) will ignore them and render a blank document instead.
