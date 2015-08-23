@@ -11,7 +11,7 @@ document.Body.AppendFile("Body.html", ContentType.Html)
 
 // Add header content.
 document.Header.AppendFile("Header.html", ContentType.Html)
-               .AppendText("<html><body><p>Sample header content!</p></html></body>", ContentType.Html);
+               .AppendText("<body><p>Sample header content!</p></body>", ContentType.Html);
 
 // Add footer content.
 document.Footer.AppendFile("Footer.Rtf", ContentType.Rtf)
@@ -20,6 +20,8 @@ document.Footer.AppendFile("Footer.Rtf", ContentType.Rtf)
 // Save file.
 document.Save("Sample.docx");
 ```
+
+![Sample.docx document's screen-shot](../master/Sample.docx.png)
 
 ## Overview:
 The component uses an _alternative format import part_ mechanism which enables importing of external content, in an alternate format, directly into a DOCX file. In other words it achieves combining of multiple documents into a single Word document.
