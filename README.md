@@ -14,12 +14,14 @@ document.Header.AppendFile("Header.html", ContentType.Html)
                .AppendText("<body><p>Sample header content!</p></body>", ContentType.Html);
 
 // Add footer content.
-document.Footer.AppendFile("Footer.Rtf", ContentType.Rtf)
+document.Footer.AppendFile("Footer.rtf", ContentType.Rtf)
                .AppendText(@"{\rtf1\ansi\cf1 Sample footer content!}", ContentType.Rtf);
 
 // Save file.
 document.Save("Sample.docx");
 ```
+
+Generated _Sample.docx_ file:
 
 ![Sample.docx document's screen-shot](../master/Sample.docx.png)
 
@@ -43,4 +45,4 @@ Feel free to contact me with any questions or issues regarding the MadMilkman.Do
 You can download the library from [here](https://github.com/MarioZ/MadMilkman.Docx/raw/master/MadMilkman.Docx.zip) or from [NuGet](http://www.nuget.org/packages/MadMilkman.Docx).
 
 ## Limitations
-The _alternative format import part_ technique does not convert the imported content from an alternative format into a WordprocessingML format but rather relies on the consuming application to merge the documents. However by DOCX specification consuming application is free to ignore the imported external content. In other words some Word processing applications (like MS Word) are able to render the external content(s) while others (like Open Office Writer) will ignore them and render a blank document instead.
+The _alternative format import part_ technique does not convert the imported content from an alternative format into a WordprocessingML format but rather relies on the consuming application to merge the documents. However by DOCX specification consuming application is free to ignore the imported external content. In other words some DOCX processing applications (like Microsoft Word) are able to render the external content(s) while others (like OpenOffice Writer) will ignore them and render a blank document instead.
