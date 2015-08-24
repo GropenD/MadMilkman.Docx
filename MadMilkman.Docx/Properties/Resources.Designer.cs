@@ -124,15 +124,6 @@ namespace MadMilkman.Docx.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to text/html.
-        /// </summary>
-        internal static string HtmlContentType {
-            get {
-                return ResourceManager.GetString("HtmlContentType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to http://schemas.openxmlformats.org/wordprocessingml/2006/main.
         /// </summary>
         internal static string MainNamespace {
@@ -147,24 +138,6 @@ namespace MadMilkman.Docx.Properties {
         internal static string RelationshipsNamespace {
             get {
                 return ResourceManager.GetString("RelationshipsNamespace", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to application/rtf.
-        /// </summary>
-        internal static string RtfContentType {
-            get {
-                return ResourceManager.GetString("RtfContentType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to application/xml.
-        /// </summary>
-        internal static string XmlContentType {
-            get {
-                return ResourceManager.GetString("XmlContentType", resourceCulture);
             }
         }
     }

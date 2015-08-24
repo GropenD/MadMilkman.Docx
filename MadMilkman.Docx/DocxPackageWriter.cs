@@ -24,7 +24,7 @@ namespace MadMilkman.Docx
             this.package = Package.Open(stream, FileMode.Create);
 
             Uri temp = new Uri("/temp.xml", UriKind.Relative);
-            this.package.CreatePart(temp, Resources.XmlContentType);
+            this.package.CreatePart(temp, "application/xml");
             this.package.DeletePart(temp);
         }
 
@@ -110,7 +110,7 @@ namespace MadMilkman.Docx
                 string altChunkId = DocxPackageWriter.AltChunkPartialId + altChunkCounter;
                 writer.WriteElement("altChunk", "id", altChunkId);
 
-                string altChunkPath = DocxPackageWriter.AltChunkPartialPath + altChunkCounter + chunk.FileExtension;
+                string altChunkPath = DocxPackageWriter.AltChunkPartialPath + altChunkCounter + chunk.Extension;
                 this.CreateAltChunkPart(chunk, altChunkPath, altChunkId, parentPart);
             }
         }
@@ -118,7 +118,7 @@ namespace MadMilkman.Docx
         private void CreateAltChunkPart(DocxChunk chunk, string altChunkPath, string altChunkId, PackagePart parentPart)
         {
             Uri altChunkUri = new Uri(altChunkPath, UriKind.Relative);
-            PackagePart altChunkPart = this.CreatePart(altChunkUri, chunk.ContentType);
+            PackagePart altChunkPart = this.CreatePart(altChunkUri, chunk.Type);
 
             using (var writer = new StreamWriter(altChunkPart.GetStream()))
                 writer.Write(chunk.Content);

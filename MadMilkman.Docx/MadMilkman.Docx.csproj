@@ -47,6 +47,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentInfoAttribute.cs" />
     <Compile Include="DocxChunk.cs" />
     <Compile Include="DocxContentBuilder.cs" />
     <Compile Include="ContentType.cs" />

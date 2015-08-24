@@ -1,49 +1,23 @@
-﻿using System;
-using MadMilkman.Docx.Properties;
-using ChunkContentType = MadMilkman.Docx.ContentType;
-
-namespace MadMilkman.Docx
+﻿namespace MadMilkman.Docx
 {
     internal sealed class DocxChunk
     {
-        private ChunkContentType contentType;
+        private readonly ContentInfoAttribute contentInfo;
 
         public string Content { get; private set; }
+        public string Extension { get { return this.contentInfo.Extension; } }
+        public string Type { get { return this.contentInfo.Type; } }
 
-        public DocxChunk(string content, ChunkContentType contentType)
+        public DocxChunk(string content, ContentType contentType)
         {
             this.Content = content;
-            this.contentType = contentType;
+            this.contentInfo = GetContentInfo(contentType);
         }
 
-        public string ContentType
+        private static ContentInfoAttribute GetContentInfo(ContentType contentType)
         {
-            get
-            {
-                if (this.contentType == ChunkContentType.Html)
-                    return Resources.HtmlContentType;
-
-                if (this.contentType == ChunkContentType.Rtf)
-                    return Resources.RtfContentType;
-
-                else
-                    throw new NotSupportedException();
-            }
-        }
-
-        public string FileExtension
-        {
-            get
-            {
-                if (this.contentType == ChunkContentType.Html)
-                    return ".html";
-
-                if (this.contentType == ChunkContentType.Rtf)
-                    return ".rtf";
-
-                else
-                    throw new NotSupportedException();
-            }
+            var memberInfo = typeof(ContentType).GetMember(contentType.ToString())[0];
+            return (ContentInfoAttribute)memberInfo.GetCustomAttributes(typeof(ContentInfoAttribute), false)[0];
         }
     }
 }

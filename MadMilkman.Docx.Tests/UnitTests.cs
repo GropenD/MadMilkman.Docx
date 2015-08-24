@@ -17,10 +17,10 @@ namespace MadMilkman.Docx.Tests
             AppendBody(docx);
 
             Assert.AreEqual(2, docx.Body.Count);
-            Assert.AreEqual("text/html", docx.Body[0].ContentType);
-            Assert.AreEqual(".html", docx.Body[0].FileExtension);
-            Assert.AreEqual("application/rtf", docx.Body[1].ContentType);
-            Assert.AreEqual(".rtf", docx.Body[1].FileExtension);
+            Assert.AreEqual("text/html", docx.Body[0].Type);
+            Assert.AreEqual(".html", docx.Body[0].Extension);
+            Assert.AreEqual("application/rtf", docx.Body[1].Type);
+            Assert.AreEqual(".rtf", docx.Body[1].Extension);
 
             Assert.IsFalse(docx.HasHeader);
             Assert.IsFalse(docx.HasFooter);
@@ -28,16 +28,16 @@ namespace MadMilkman.Docx.Tests
             AppendHeaderFooter(docx);
 
             Assert.AreEqual(2, docx.Header.Count);
-            Assert.AreEqual("text/html", docx.Header[0].ContentType);
-            Assert.AreEqual(".html", docx.Header[0].FileExtension);
-            Assert.AreEqual("application/rtf", docx.Header[1].ContentType);
-            Assert.AreEqual(".rtf", docx.Header[1].FileExtension);
+            Assert.AreEqual("text/html", docx.Header[0].Type);
+            Assert.AreEqual(".html", docx.Header[0].Extension);
+            Assert.AreEqual("application/rtf", docx.Header[1].Type);
+            Assert.AreEqual(".rtf", docx.Header[1].Extension);
 
             Assert.AreEqual(2, docx.Footer.Count);
-            Assert.AreEqual("text/html", docx.Footer[0].ContentType);
-            Assert.AreEqual(".html", docx.Footer[0].FileExtension);
-            Assert.AreEqual("application/rtf", docx.Footer[1].ContentType);
-            Assert.AreEqual(".rtf", docx.Footer[1].FileExtension);
+            Assert.AreEqual("text/html", docx.Footer[0].Type);
+            Assert.AreEqual(".html", docx.Footer[0].Extension);
+            Assert.AreEqual("application/rtf", docx.Footer[1].Type);
+            Assert.AreEqual(".rtf", docx.Footer[1].Extension);
         }
 #endif
 

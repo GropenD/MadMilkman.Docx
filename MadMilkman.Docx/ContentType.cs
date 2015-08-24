@@ -8,10 +8,13 @@
         /// <summary>
         /// Defines HTML formatted content.
         /// </summary>
+        [ContentInfo(".html", "text/html")]
         Html = 0,
+
         /// <summary>
         /// Defines RTF formatted content.
         /// </summary>
+        [ContentInfo(".rtf", "application/rtf")]
         Rtf
     }
 }
